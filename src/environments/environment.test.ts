@@ -3,5 +3,5 @@ import { EnvironmentType } from 'src/app/models/enums';
 
 export const environment: EnvironmentConfig = {
     apiBaseUrl: '',
-    environmentType: EnvironmentType.Prod
+    environmentType: EnvironmentType.Test
 };
