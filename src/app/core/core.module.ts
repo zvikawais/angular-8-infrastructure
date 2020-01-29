@@ -5,9 +5,10 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoggingInterceptor } from './interceptors/logging-interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, HomeComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -24,10 +25,11 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
       useClass: ErrorInterceptor,
       multi: true
     }
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent
   ]
-  // imports: [
-  //   SharedModule,
-  //   HttpClientModule
-  // ]
 })
-export class AppLayoutModule { }
+export class CoreModule { }
