@@ -6,6 +6,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoggingInterceptor } from './interceptors/logging-interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { HomeComponent } from './home/home.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, HomeComponent],
@@ -25,6 +26,9 @@ import { HomeComponent } from './home/home.component';
       useClass: ErrorInterceptor,
       multi: true
     }
+  ],
+  imports: [
+    SharedModule
   ],
   exports: [
     HeaderComponent,

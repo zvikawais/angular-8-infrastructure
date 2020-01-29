@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FeatureExampleRoutingModule } from './feature-example-routing.module';
+import { FeatureComponent } from './feature/feature.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [FeatureComponent],
   imports: [
     SharedModule,
     FeatureExampleRoutingModule

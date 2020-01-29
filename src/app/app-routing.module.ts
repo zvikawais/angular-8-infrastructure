@@ -9,7 +9,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'example',
+    path: 'feature-example',
     loadChildren: () =>
       import('./features/feature-example/feature-example.module').then((m) => m.FeatureExampleModule)
   },
