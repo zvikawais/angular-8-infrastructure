@@ -22,7 +22,6 @@ export class CachingService {
   }
 
   set<T>(itemKey: string, value: T) {
-
     const expirationTime = new Date();
     expirationTime.setTime(expirationTime.getTime() + (1 * 60 * 60 * 1000)); // set expiration time for 1 hour
     const storageItem = { Key: itemKey, Value: value, ExpirationDate: expirationTime };

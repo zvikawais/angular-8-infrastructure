@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
@@ -7,6 +7,7 @@ import { LoggingInterceptor } from './interceptors/logging-interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
+import { ErrorHandlerService } from './error-handler/error-handler-service';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, HomeComponent],
@@ -25,6 +26,10 @@ import { SharedModule } from '../shared/shared.module';
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
       multi: true
+    },
+    {
+      provide: ErrorHandler,
+      useClass: ErrorHandlerService
     }
   ],
   imports: [

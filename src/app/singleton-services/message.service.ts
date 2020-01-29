@@ -12,5 +12,13 @@ export class MessageService {
     }
   }
 
+  toast(msg: string) {
+
+  }
+
+  popup(msg: string) {
+
+  }
+
   constructor() { }
 }
