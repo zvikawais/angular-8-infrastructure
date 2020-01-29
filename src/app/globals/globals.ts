@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash/cloneDeep';
 import { Globals } from '../models/globals.model';
 
 
@@ -13,5 +14,5 @@ const GLOBALS: Globals = {
 };
 
 export function globals(): Globals {
-    return JSON.parse(JSON.stringify(GLOBALS));
+    return cloneDeep(GLOBALS);
 }
