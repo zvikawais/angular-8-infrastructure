@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FeatureService } from '../feature.service';
+import { Observable } from 'rxjs';
+import { Feature } from 'src/app/models/feature.model';
 
 @Component({
   selector: 'app-feature',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeatureComponent implements OnInit {
 
-  constructor() { }
+  items$: Observable<Feature[]>;
+  constructor(private featureService: FeatureService) { }
 
   ngOnInit() {
+    this.items$ = this.featureService.dataSteam$;
   }
 
 }
