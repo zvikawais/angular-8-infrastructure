@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+  isLoggedIn: any;
+  redirectUrl: string;
   getAuthorizationToken() {
     return '';
   }

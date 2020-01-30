@@ -3,27 +3,17 @@
 @import "assets/scss/variables";
 @import "assets/scss/mixins";
 @import "assets/scss/reboot";
-
-// grid
-html {
-  box-sizing: border-box;
-  -ms-overflow-style: scrollbar;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-@import "assets/scss/functions";
-@import "assets/scss/variables";
-
-@import "assets/scss/mixins/breakpoints";
-@import "assets/scss/mixins/grid-framework";
-@import "assets/scss/mixins/grid";
-
+@import "assets/scss/type";
+@import "assets/scss/images";
+@import "assets/scss/code";
 @import "assets/scss/grid";
-@import "assets/scss/utilities/display";
-@import "assets/scss/utilities/flex";
-@import "assets/scss/utilities/spacing";
+@import "assets/scss/tables";
+@import "assets/scss/transitions";
+@import "assets/scss/nav";
+@import "assets/scss/navbar";
+@import "assets/scss/media";
+@import "assets/scss/utilities";
+@import "assets/scss/print";
+@import "assets/scss/close";
+@import "assets/scss/toasts";
+@import "assets/scss/modal";

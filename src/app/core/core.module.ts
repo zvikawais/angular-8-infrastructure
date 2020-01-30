@@ -8,9 +8,10 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { ErrorHandlerService } from './error-handler/error-handler-service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [HeaderComponent, FooterComponent, HomeComponent, NotFoundComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

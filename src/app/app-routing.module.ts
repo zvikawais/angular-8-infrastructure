@@ -2,6 +2,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,8 +17,15 @@ const routes: Routes = [
   },
 
   {
+    path: 'secure',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./features/secure-feature/secure-feature.module').then((m) => m.SecureFeatureModule)
+  },
+
+  {
     path: '**',
-    redirectTo: '' // todo
+    component: NotFoundComponent
   }
 ];
 
