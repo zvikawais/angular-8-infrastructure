@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   routes = globals().APP_ROUTES;
   isLoggedIn$: Observable<boolean>;
+  isCollapsed = true;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {

@@ -10,12 +10,12 @@
         </ng-template>
 
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-collapse" [ngClass]="{'collapse': isCollapsed, 'animated fadeIn':!isCollapsed}">
             <ul class="navbar-nav mr-auto">
                 <li *ngFor="let item of routes" class="nav-item" routerLinkActive="active"><a class="nav-link"
                         [routerLink]="[item.route]">{{item.name}}</a></li>
