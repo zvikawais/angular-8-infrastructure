@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { CacheType } from '../models/enums';
-import { environment } from 'src/environments/environment';
-import { CachingService } from './caching.service';
 import { tap } from 'rxjs/operators';
+import { CacheType } from '../models/enums';
+import { environment } from '../../environments/environment';
+import { CachingService } from './caching.service';
 
 @Injectable({
   providedIn: 'root'

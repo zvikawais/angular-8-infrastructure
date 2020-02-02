@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FeatureService } from '../feature.service';
 import { Observable } from 'rxjs';
-import { Feature } from 'src/app/models/feature.model';
+import { FeatureService } from '../feature.service';
+import { Feature } from '../../../../app/models/feature.model';
 
 @Component({
   selector: 'app-feature',

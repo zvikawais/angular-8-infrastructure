@@ -1,7 +1,8 @@
-# AngularInfrastructure
+# Angular-8-Infrastructure
 
 A super modularized architecture for large scale angular apps , implementing state management with observables. 
 
+For runing on stackblitz click [here](https://stackblitz.com/github/zvikawais/angular-8-infrastructure)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 

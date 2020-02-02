@@ -1,5 +1,5 @@
-import { EnvironmentConfig } from 'src/app/models/environment-config.model';
-import { EnvironmentType } from 'src/app/models/enums';
+import { EnvironmentConfig } from '../app/models/environment-config.model';
+import { EnvironmentType } from '../app/models/enums';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.

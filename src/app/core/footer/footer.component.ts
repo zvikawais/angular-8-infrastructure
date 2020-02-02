@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { globals } from 'src/app/globals/globals';
+import { globals } from '../../../app/globals/globals';
 
 @Component({
   selector: 'app-footer',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import cloneDeep from 'lodash/cloneDeep';
-import { Feature } from 'src/app/models/feature.model';
+import { Feature } from '../../../app/models/feature.model';
 
 @Injectable({
   providedIn: 'root'
