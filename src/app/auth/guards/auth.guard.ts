@@ -7,6 +7,8 @@ import {
   NavigationExtras
 } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -14,34 +16,29 @@ import { AuthService } from '../auth.service';
 export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(private authService: AuthService, private router: Router) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     const url: string = state.url;
 
     return this.checkLogin(url);
   }
 
-  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.canActivate(route, state);
   }
 
-  checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) { return true; }
+  checkLogin(url: string): Observable<boolean> {
 
-    // Store the attempted URL for redirecting
-    this.authService.redirectUrl = url;
 
-    // Create a dummy session id
-    const sessionId = 123456789;
+    return this.authService.isLoggedInStream$.pipe(tap(x => {
+      if (!x) {
 
-    // Set our navigation extras object
-    // that contains our global query params and fragment
-    const navigationExtras: NavigationExtras = {
-      queryParams: { session_id: sessionId },
-      fragment: 'anchor'
-    };
+        const navigationExtras: NavigationExtras = {
+          queryParams: { redirectUrl: url },
+          fragment: 'anchor'
+        };
 
-    // Navigate to the login page with extras
-    this.router.navigate(['/auth/sign-in'], navigationExtras);
-    return false;
+        this.router.navigate(['/auth/sign-in'], navigationExtras);
+      }
+    }));
   }
 }
