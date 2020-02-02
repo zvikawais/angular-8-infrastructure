@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { CacheType } from '../models/enums';
 import { environment } from 'src/environments/environment';
@@ -17,16 +17,11 @@ export class BugService {
 
   constructor(private http: HttpClient, private cachingService: CachingService) { }
 
-  // Http Headers
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
+
 
   // POST
   executePost<T>(url: string, data: {}): Observable<T> {
-    return this.http.post<T>(this.baseurl + url, JSON.stringify(data), this.httpOptions);
+    return this.http.post<T>(this.baseurl + url, JSON.stringify(data));
   }
 
   // GET
@@ -45,11 +40,11 @@ export class BugService {
 
   // PUT
   executeUpdate<T>(url: string, data: {}): Observable<T> {
-    return this.http.put<T>(this.baseurl + url, JSON.stringify(data), this.httpOptions);
+    return this.http.put<T>(this.baseurl + url, JSON.stringify(data));
   }
 
   // DELETE
   executeDelete<T>(url: string) {
-    return this.http.delete<T>(this.baseurl + url, this.httpOptions);
+    return this.http.delete<T>(this.baseurl + url);
   }
 }
