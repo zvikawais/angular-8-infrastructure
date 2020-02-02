@@ -22,7 +22,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/secure-feature/secure-feature.module').then((m) => m.SecureFeatureModule)
   },
-
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./auth/auth.module').then((m) => m.AuthModule)
+  },
   {
     path: '**',
     component: NotFoundComponent

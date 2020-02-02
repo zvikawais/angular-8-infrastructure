@@ -10,6 +10,10 @@ const GLOBALS: Globals = {
         {
             route: '/feature-example', name: 'feature example'
         }
+        ,
+        {
+            route: '/secure', name: 'secure feature example'
+        }
     ]
 };
 
