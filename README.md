@@ -1,5 +1,8 @@
 # AngularInfrastructure
 
+A super modularized architecture for large scale angular apps , implementing state management with observables. 
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
 ## Development server
