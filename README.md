@@ -2,6 +2,8 @@
 
 A super modularized architecture for large scale angular apps , implementing state management with observables. 
 
+The focus in this project is neither about the view nor the UI, just about the core concepts + design + architecture + optimization !!!
+
 For running on stackblitz click [here](https://stackblitz.com/github/zvikawais/angular-8-infrastructure)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
