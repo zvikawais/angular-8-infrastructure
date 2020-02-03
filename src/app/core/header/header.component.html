@@ -1,12 +1,12 @@
-<header>
+<header class="mb-5">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <ng-container *ngIf="isLoggedIn$ | async; else loggedOutTemp">
             <span>Logged in</span>
-            <button (click)="logoutClicked()">logout</button>
+            <a (click)="logoutClicked()" class="mr-3">logout</a>
         </ng-container>
         <ng-template #loggedOutTemp>
-            <button (click)="loginClicked()">login</button>
+            <a (click)="loginClicked()" class="mr-3">login</a>
         </ng-template>
 
 
@@ -15,7 +15,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse" [ngClass]="{'collapse': isCollapsed, 'animated fadeIn':!isCollapsed}">
+        <div class="navbar-collapse" [ngClass]="{'collapse': isCollapsed}">
             <ul class="navbar-nav mr-auto">
                 <li *ngFor="let item of routes" class="nav-item" routerLinkActive="active"><a class="nav-link"
                         [routerLink]="[item.route]">{{item.name}}</a></li>

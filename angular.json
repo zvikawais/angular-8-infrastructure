@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/css/animate.min.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
